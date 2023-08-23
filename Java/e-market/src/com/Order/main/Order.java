@@ -8,11 +8,13 @@ public class Order {
 	  
 	  
 	    private List<Product> items;
-	    private Product product;
+	  //  private Product product;
+	    private double totalBill;
 	    
 	    public Order(Product product) {
 	      this.items = new ArrayList<>();
-	      this.product = product;
+	    //  this.product = product;
+	     // this.totalBill = 0;
 	    }
 
 	    public void addItem(Product prd) {
@@ -25,6 +27,7 @@ public class Order {
 	                 items.add(desiredProduct);
 	                 prd.reduceProductQuantity(product); // Reduce the quantity of the product
 	                 System.out.println("Product added to cart.");
+	                 totalBill += prd.getPrice(product);
 	             } else {
 	                 System.out.println("Product not available in stock.");
 	             }
@@ -59,8 +62,13 @@ public class Order {
 	    	        prd.increaseProductQuantity(product);
 	    	        System.out.println("Product removed from cart.");
 	    	        System.out.println("list :"+items);
+	    	        totalBill -= prd.getPrice(product);
 	    	    } else {
 	    	        System.out.println("This product is not in the cart.");
 	    	    }
-}
+	    }
+	    
+	    public void displayTotalBill() {
+	        System.out.println("Total bill: " + totalBill);
+	    }
 }

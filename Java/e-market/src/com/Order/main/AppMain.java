@@ -80,7 +80,8 @@ public class AppMain {
 		                          System.out.println("| Display Product list         |  press 2 |");
 		                          System.out.println("| Display ordered items        |  press 3 |");
 		                          System.out.println("| To remove from cart          |  press 4 |");
-		                          System.out.println("| Exit                         |  press 5 |");
+		                          System.out.println("| Total Bill                   |  press 5 |");
+		                          System.out.println("| Exit                         |  press 6 |");
 		                          System.out.println("|-----------------------------------------|");
 		                          System.out.println("\nEnter your choice:");
 		                          ch = sc1.nextInt();
@@ -99,6 +100,9 @@ public class AppMain {
 		                                  ord.deleteOrder(a);
 		                                  break;
 		                              case 5:
+		                                  ord.displayTotalBill();
+		                                  break;
+		                              case 6:
 		                                  System.out.println("\n....THANK YOU FOR VISITING...");
 		                                  break;    
 		                              

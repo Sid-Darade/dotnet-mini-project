@@ -34,6 +34,10 @@ public class Product {
 			        quantity--;
 			    }
 		}
+		
+	//	public double productPrice() {
+	//		return price;
+	//	}
 	}
 	
 	public Product() {
@@ -196,6 +200,17 @@ public class Product {
 	        temp = temp.next;
 	    }
 		
+	}
+
+	public double getPrice(String pname) {
+		 Node temp = head;
+		    while (temp != null) {
+		        if (temp.data.equalsIgnoreCase(pname)) {
+		        	return temp.price;
+		        }
+		        temp = temp.next;
+		    }
+		    return 0.0; 
 	}
 
 	
